@@ -5,44 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunar Panel - Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="dashboard-container">
         <nav class="navbar">
-            <div class="logo">LUNAR PANEL</div>
-            <a href="/logout" class="logout-btn">Çıkış Yap</a>
+            <div class="logo">
+                <i class="fa-solid fa-moon"></i>
+                <span>LUNAR PANEL</span>
+            </div>
+            <a href="/logout" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Çıkış Yap</span>
+            </a>
         </nav>
         <main class="content">
             <div class="table-container">
-                <h2>Bekleyen İstekler</h2>
-                <table id="requests-table">
-                    <thead>
-                        <tr>
-                            <th>HWID</th>
-                            <th>İstek Tarihi</th>
-                            <th>İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <h2><i class="fa-regular fa-clock"></i> Bekleyen İstekler</h2>
+                <div class="table-wrapper">
+                    <table id="requests-table">
+                        <thead>
+                            <tr>
+                                <th>HWID</th>
+                                <th>İstek Tarihi</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
             </div>
+
             <div class="table-container">
-                <h2>Aktif Lisanslar</h2>
-                <table id="licenses-table">
-                    <thead>
-                        <tr>
-                            <th>HWID</th>
-                            <th>Oluşturulma Tarihi</th>
-                            <th>Bitiş Tarihi</th>
-                            <th>İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <h2><i class="fa-solid fa-check-double"></i> Aktif Lisanslar</h2>
+                 <div class="table-wrapper">
+                    <table id="licenses-table">
+                        <thead>
+                            <tr>
+                                <th>HWID</th>
+                                <th>Oluşturulma</th>
+                                <th>Bitiş</th>
+                                <th>Kalan Süre</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
             </div>
         </main>
     </div>
+
+    <div id="approve-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3>Lisans Süresi Belirle</h3>
+            <p id="modal-hwid-text"></p>
+            <input type="number" id="license-days" placeholder="Lisans süresi (gün olarak)" min="1" value="30">
+            <div class="modal-actions">
+                <button id="cancel-approval" class="btn btn-deny">İptal</button>
+                <button id="confirm-approval" class="btn btn-approve">Onayla</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast-container"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
