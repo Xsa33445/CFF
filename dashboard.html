@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Panel - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="logo">LUNAR PANEL</div>
+            <a href="/logout" class="logout-btn">Çıkış Yap</a>
+        </nav>
+        <main class="content">
+            <div class="table-container">
+                <h2>Bekleyen İstekler</h2>
+                <table id="requests-table">
+                    <thead>
+                        <tr>
+                            <th>HWID</th>
+                            <th>İstek Tarihi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <h2>Aktif Lisanslar</h2>
+                <table id="licenses-table">
+                    <thead>
+                        <tr>
+                            <th>HWID</th>
+                            <th>Oluşturulma Tarihi</th>
+                            <th>Bitiş Tarihi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
